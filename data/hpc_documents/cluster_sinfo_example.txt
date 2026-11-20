@@ -1,0 +1,34 @@
+元数据：
+topic: cluster, slurm
+scope: example-cluster
+dynamic: true
+
+标题：EXAMPLE-CLUSTER 超算 Slurm partition 与 sinfo 快照
+
+关键词：
+EXAMPLE-CLUSTER, sinfo, scontrol show partition, partition, cpu_batch, cpu_debug, Slurm分区, 队列, 节点状态, TIMELIMIT
+
+说明：
+本文是完全虚构的教学示例，不对应任何实际公司、账号或集群。
+分区名称和运行时间仅用于演示，不能作为真实作业的默认配置。
+实际资源、权限和限制应以目标集群当前 sinfo、scontrol 输出和管理员说明为准。
+
+示例分区：
+cpu_batch：示例正式 CPU 计算分区，示例时间上限 24 小时。
+cpu_debug：示例短测试分区，示例最长运行时间 30 分钟。
+
+问题：cpu_debug 能跑多久？
+回答：在这个虚构示例中，cpu_debug 的 MaxTime 为 00:30:00，最长 30 分钟。
+
+问题：EXAMPLE-CLUSTER 上正式 VASP 作业应该提交到哪个 partition？
+回答：虚构示例使用 cpu_batch；实际提交前必须检查真实集群的分区、账号权限与运行限制。
+
+查询命令：
+sinfo -s
+sinfo -o "%P %.10a %.12l %.8D %.8t %.16G %N"
+scontrol show partition
+squeue -u $USER
+
+节点状态说明：
+idle 表示空闲，alloc 表示已分配，down 表示不可用，drain 表示暂停接收新作业。
+这些状态随时间变化，知识库示例不能替代实时查询。

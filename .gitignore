@@ -1,0 +1,71 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+
+# Runtime state
+.last_job_id
+data/cli_history.txt
+data/jobs/job_registry.json
+data/jobs/archive/
+REPORT_PLAN.md
+job.sh
+hpc-local-jobs/
+vasp-jobs-input/
+vasp-jobs-output/
+
+# Slurm outputs
+slurm-*.out
+slurm-*.err
+agent_*.out
+agent_*.err
+hpc_agent_job_*.out
+hpc_agent_job_*.err
+
+# VASP licensed/large runtime files
+POTCAR
+WAVECAR
+CHGCAR
+CHG
+AECCAR*
+vasprun.xml
+
+# Local credentials, assistant settings, and private data
+.env.*
+!.env.example
+*.pem
+*.key
+.claude/
+.codex/
+.agents/
+config/*.local.*
+data/private/
+*.log
+*_audit.jsonl
+public-release/
+
+# OS/download metadata and editor temporary files
+*:Zone.Identifier
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Test and analysis caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# All generated job records and local exports
+data/jobs/
